@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V55YZ4F2JG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V55YZ4F2JG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-V55YZ4F2JG');
-</script>
+    gtag('config', 'G-V55YZ4F2JG');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -306,6 +306,75 @@
       line-height: 1.55;
     }
 
+    /* How It Works Section */
+    .how-it-works-section {
+      margin-bottom: 70px;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .how-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 36px 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .how-card h3 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0F172A;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .step-item {
+      text-align: center;
+      padding: 16px 10px;
+    }
+
+    .step-divider {
+      border: none;
+      border-top: 1px dashed #CBD5E1;
+      margin: 6px auto;
+      width: 75%;
+    }
+
+    .step-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1E293B;
+    }
+
+    .step-icon svg {
+      width: 38px;
+      height: 38px;
+      fill: currentColor;
+    }
+
+    .step-item h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 6px;
+    }
+
+    .step-item p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -501,28 +570,35 @@
       }
     }
 
-   @media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-  .nav-links {
-    display: none;
-  }
-  .hero h1 {
-    font-size: 2.1rem;
-  }
-  .cookie-banner {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-  .cookie-btn {
-    width: 100%;
-  }
-  .contact-card {
-    padding: 24px;
-  }
-}
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .how-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .how-card {
+        padding: 28px 16px;
+      }
+      .cookie-banner {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+      .cookie-btn {
+        width: 100%;
+      }
+      .contact-card {
+        padding: 24px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -535,6 +611,7 @@
     </a>
     <nav class="nav-links">
       <a href="#why-us">Why CamPhotoShare</a>
+      <a href="#how-it-works">How It Works</a>
       <a href="#features">Features</a>
       <a href="#contact">Contact</a>
       <a href="privacy-policy.html">Privacy</a>
@@ -549,13 +626,13 @@
     </div>
     <h1>The Smart Photo Selection &amp; Event Sharing Platform</h1>
     <p>
-      Eliminate pen-drive hassles and handwritten photo slips. Share event galleries through instant QR codes and let clients selection album photos directly from their phone or browser.
+      Eliminate pen-drive hassles and handwritten photo slips. Share event galleries through instant QR codes and let clients select album photos directly from their phone or browser.
     </p>
 
     <!-- Dual Platform CTA Group -->
     <div class="cta-group">
       <!-- Windows Version Download -->
-     <a href="https://github.com/kedarbehra2001-sys/camphotoshare/releases/latest/download/CamPhotoShare-Setup.exe" class="btn-windows">
+      <a href="https://github.com/kedarbehra2001-sys/camphotoshare/releases/latest/download/CamPhotoShare-Setup.exe" class="btn-windows">
         <svg viewBox="0 0 88 88">
           <path d="M0 12.402l35.689-4.86.016 34.423-35.67.203zm35.67 33.529l.026 34.453-35.696-4.908-.002-29.78zm4.326-39.027L87.914 0v41.527l-47.918.378zm47.918 45.024L40.022 88V46.529l47.918.307z"/>
         </svg>
@@ -566,7 +643,7 @@
       </a>
 
       <!-- Android Play Store Download -->
-     <a href="https://play.google.com/store/apps/details?id=com.camvibe.camphotoshare" target="_blank" rel="noopener noreferrer" class="btn-play">
+      <a href="https://play.google.com/store/apps/details?id=com.camvibe.camphotoshare" target="_blank" rel="noopener noreferrer" class="btn-play">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4c0 .6.2 1.1.6 1.5l.1.1 9.8-9.8v-.2L3.7 2.4l-.1-.6z" fill="#4285F4"/>
           <path d="M16.8 15.6l-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2-.1.1z" fill="#FBBC04"/>
@@ -599,7 +676,7 @@
         <div class="why-card">
           <div class="why-number">02</div>
           <h3>Instant Shortlist on PC</h3>
-          <p>Clients selected and approve photos with a single tap. The finalized selection file syncs straight to your Windows software for design.</p>
+          <p>Clients select and approve photos with a single tap. The finalized selection file syncs straight to your Windows software for design.</p>
         </div>
 
         <div class="why-card">
@@ -613,6 +690,94 @@
           <h3>Password &amp; PIN Security</h3>
           <p>Every event and selection session is protected with unique passwords so family photos remain strictly confidential to your clients.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Section: How It Works -->
+    <section id="how-it-works" class="how-it-works-section">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">A seamless 3-step workflow connecting professional photographers with their clients.</p>
+
+      <div class="how-grid">
+
+        <!-- Card 1: Photographers -->
+        <div class="how-card">
+          <h3>How It Works for Photographers</h3>
+
+          <!-- Step 1: Create Event -->
+          <div class="step-item">
+            <div class="step-icon">
+              <!-- Calendar Icon -->
+              <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg>
+            </div>
+            <h4>Create Event</h4>
+            <p>Create an Event for that particular user.</p>
+          </div>
+
+          <hr class="step-divider" />
+
+          <!-- Step 2: Upload -->
+          <div class="step-item">
+            <div class="step-icon">
+              <!-- Cloud Upload Icon -->
+              <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+            </div>
+            <h4>Upload</h4>
+            <p>Upload the photos onto the event by simple drag and drop.</p>
+          </div>
+
+          <hr class="step-divider" />
+
+          <!-- Step 3: Share -->
+          <div class="step-item">
+            <div class="step-icon">
+              <!-- Share Icon -->
+              <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            </div>
+            <h4>Share</h4>
+            <p>Instantly get a link and share with the customer for Photo Selection.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Customers -->
+        <div class="how-card">
+          <h3>How It Works for Customers</h3>
+
+          <!-- Step 1: Click The Link -->
+          <div class="step-item">
+            <div class="step-icon">
+              <!-- Link Icon -->
+              <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+            </div>
+            <h4>Click The Link</h4>
+            <p>The client clicks the link shared by you</p>
+          </div>
+
+          <hr class="step-divider" />
+
+          <!-- Step 2: Enter Private Key -->
+          <div class="step-item">
+            <div class="step-icon">
+              <!-- Key Icon -->
+              <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+            </div>
+            <h4>Enter Private Key</h4>
+            <p>The client enters the 4-digit private key</p>
+          </div>
+
+          <hr class="step-divider" />
+
+          <!-- Step 3: Select Photos -->
+          <div class="step-item">
+            <div class="step-icon">
+              <!-- Photo Album Icon -->
+              <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+            </div>
+            <h4>Select Photos</h4>
+            <p>The client can view and select the photos</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -690,55 +855,4 @@
           <h3>Follow &amp; Connect</h3>
           <p>Stay updated with our latest features, tutorials, and community updates:</p>
           <div class="social-links">
-            <a href="https://www.instagram.com/camphotoshare.in" target="_blank" rel="noopener noreferrer" class="social-btn">Instagram</a>
-            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="social-btn">WhatsApp</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn">YouTube</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-links">
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-      <a href="account-deletion.html">Account Deletion</a>
-      <a href="#contact">Contact Us</a>
-    </div>
-    <div class="copyright">
-      &copy; 2026 CamPhotoShare. All rights reserved.
-    </div>
-  </footer>
-
-  <!-- Cookie Consent Banner -->
-  <aside id="cookieBanner" class="cookie-banner" style="display: none;">
-    <p class="cookie-text">
-      We use cookies to ensure you get the best browsing experience. By continuing to use our website, you agree to our 
-      <a href="privacy-policy.html">Privacy Policy</a>.
-    </p>
-    <button id="acceptCookieBtn" class="cookie-btn">Accept Cookies</button>
-  </aside>
-
-  <!-- Cookie Script -->
-  <script>
-    (function() {
-      const banner = document.getElementById('cookieBanner');
-      const btn = document.getElementById('acceptCookieBtn');
-      const accepted = localStorage.getItem('camphotoshare_cookies_accepted');
-
-      if (!accepted) {
-        banner.style.display = 'flex';
-      }
-
-      btn.addEventListener('click', function() {
-        localStorage.setItem('camphotoshare_cookies_accepted', 'true');
-        banner.style.display = 'none';
-      });
-    })();
-  </script>
-
-</body>
-</html>
+            <a href="
