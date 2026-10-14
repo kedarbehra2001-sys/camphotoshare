@@ -850,9 +850,60 @@
           <p><strong>Support:</strong> Monday – Saturday (10:00 AM – 7:00 PM IST)</p>
         </div>
 
-        <!-- Social Media Links -->
+     <!-- Social Media Links -->
         <div class="contact-col">
           <h3>Follow &amp; Connect</h3>
           <p>Stay updated with our latest features, tutorials, and community updates:</p>
           <div class="social-links">
-            <a href="
+            <a href="https://www.instagram.com/camphotoshare.in" target="_blank" rel="noopener noreferrer" class="social-btn">Instagram</a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="social-btn">WhatsApp</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="account-deletion.html">Account Deletion</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="copyright">
+      &copy; 2026 CamPhotoShare. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <aside id="cookieBanner" class="cookie-banner" style="display: none;">
+    <p class="cookie-text">
+      We use cookies to ensure you get the best browsing experience. By continuing to use our website, you agree to our 
+      <a href="privacy-policy.html">Privacy Policy</a>.
+    </p>
+    <button id="acceptCookieBtn" class="cookie-btn">Accept Cookies</button>
+  </aside>
+
+  <!-- Cookie Script -->
+  <script>
+    (function() {
+      const banner = document.getElementById('cookieBanner');
+      const btn = document.getElementById('acceptCookieBtn');
+      const accepted = localStorage.getItem('camphotoshare_cookies_accepted');
+
+      if (!accepted) {
+        banner.style.display = 'flex';
+      }
+
+      btn.addEventListener('click', function() {
+        localStorage.setItem('camphotoshare_cookies_accepted', 'true');
+        banner.style.display = 'none';
+      });
+    })();
+  </script>
+
+</body>
+</html>
