@@ -1,208 +1,635 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Main Title & SEO Description -->
+  <!-- Main Title & SEO Description -->
   <title>CamPhotoShare | QR Photo Sharing & Online Album Selection App for Photographers</title>
-  <meta name="description" content="CamPhotoShare is the ultimate QR photo sharing and online album selection app for professional photographers. Share event photos via QR code scan and let clients shortlist photos effortlessly.">
-  <meta name="keywords" content="QR photo sharing app, online album photo selection, photo selection app for photographers, QR scan event photos, studio photo sharing, shortlisted photos app, CamPhotoShare, wedding photo selection">
-  <meta name="author" content="CamPhotoShare">
-  <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://camphotoshare.in/" />
-    
+  <meta name="description" content="CamPhotoShare is the ultimate QR photo sharing and online album selection app for professional photographers. Share event photos via QR code scan and let clients shortlist photos effortlessly." />
+  <meta name="keywords" content="QR photo sharing app, online album photo selection, photo selection app for photographers, QR scan event photos, studio photo sharing, shortlisted photos app, CamPhotoShare, wedding photo selection" />
+  <meta name="author" content="CamPhotoShare" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://camphotoshare.in/" />
 
   <!-- Open Graph / Social Media & WhatsApp Sharing Preview -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="CamPhotoShare - QR Photo Sharing & Online Album Selection">
-  <meta property="og:description" content="Instant QR photo sharing for event guests and seamless online album photo shortlisting for studio clients. Built for professional photographers.">
-  <meta property="og:url" content="https://camphotoshare.in/">
-  <meta property="og:site_name" content="CamPhotoShare">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CamPhotoShare - QR Photo Sharing & Online Album Selection" />
+  <meta property="og:description" content="Instant QR photo sharing for event guests and seamless online album photo shortlisting for studio clients. Built for professional photographers." />
+  <meta property="og:url" content="https://camphotoshare.in/" />
+  <meta property="og:site_name" content="CamPhotoShare" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CamPhotoShare | QR Event Photo Sharing & Selection">
-  <meta name="twitter:description" content="Fastest way for photographers to share event photos via QR scan and allow online client photo selection.">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CamPhotoShare | QR Event Photo Sharing & Selection" />
+  <meta name="twitter:description" content="Fastest way for photographers to share event photos via QR scan and allow online client photo selection." />
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <!-- Modern Web Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #222;
-            line-height: 1.6;
-        }
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-hover: #4338CA;
+      --primary-light: #EEF2FF;
+      --dark: #0F172A;
+      --card-bg: #FFFFFF;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --bg-soft: #F8FAFC;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 55px 20px;
-        }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-soft);
+      color: var(--dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 38px;
-        }
+    /* Modern Sticky Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 8%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
 
-        header p {
-            margin-top: 12px;
-            font-size: 18px;
-            color: #d1d5db;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
 
-        .card {
-            background: white;
-            margin-top: 30px;
-            padding: 30px;
-            border-radius: 14px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #4F46E5, #6366F1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
 
-        h2 {
-            color: #111827;
-        }
+    .brand span {
+      color: var(--primary);
+    }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-left: 20px;
+      transition: color 0.2s ease;
+    }
 
-        .feature {
-            background: #f3f4f6;
-            padding: 20px;
-            border-radius: 10px;
-        }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
 
-        .feature h3 {
-            margin-top: 0;
-        }
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
 
-        .links {
-            text-align: center;
-            margin-top: 30px;
-        }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
 
-        .links a {
-            display: inline-block;
-            margin: 8px;
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.22;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+      color: #020617;
+    }
 
-        .links a:hover {
-            text-decoration: underline;
-        }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: #6b7280;
-            font-size: 14px;
-        }
-    </style>
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    /* Modern Google Play Button */
+    .play-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #000000;
+      color: #ffffff;
+      padding: 10px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.25);
+    }
+
+    .play-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px -5px rgba(0, 0, 0, 0.35);
+    }
+
+    .play-icon {
+      width: 28px;
+      height: 28px;
+      margin-right: 12px;
+    }
+
+    .play-text {
+      text-align: left;
+      line-height: 1.15;
+    }
+
+    .play-text small {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #CBD5E1;
+      display: block;
+    }
+
+    .play-text span {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    /* Hero QR Showcase Visual */
+    .qr-showcase {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 14px 22px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
+    }
+
+    .qr-code-box {
+      width: 60px;
+      height: 60px;
+      background: #F1F5F9;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #CBD5E1;
+      position: relative;
+    }
+
+    .qr-text-info {
+      text-align: left;
+    }
+
+    .qr-text-info .tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .qr-text-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .qr-text-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Main Content Container */
+    .container {
+      max-width: 1080px;
+      margin: 10px auto 80px;
+      padding: 0 20px;
+    }
+
+    /* About Section Card */
+    .about-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 36px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+      margin-bottom: 40px;
+    }
+
+    .about-card h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: #0F172A;
+      letter-spacing: -0.5px;
+    }
+
+    .about-card p {
+      color: #475569;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Features Grid */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 25px -5px rgba(0, 0, 0, 0.06);
+      border-color: #CBD5E1;
+    }
+
+    .feature-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      background: #F1F5F9;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      color: var(--primary);
+    }
+
+    .feature-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      background: #FFFFFF;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      color: #94A3B8;
+      font-size: 0.85rem;
+    }
+
+    /* Cookie Banner Toast */
+    .cookie-banner {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 620px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+      border-radius: 16px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      z-index: 999;
+      animation: fadeInUp 0.4s ease-out;
+    }
+
+    .cookie-text {
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    .cookie-text a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cookie-btn {
+      background: var(--dark);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+    }
+
+    .cookie-btn:hover {
+      background: #1E293B;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .qr-showcase {
+        width: 100%;
+        max-width: 320px;
+      }
+      .cookie-banner {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+      .cookie-btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>CamPhotoShare</h1>
-    <p>Easy Photo Sharing for Photographers and Their Clients</p>
-</header>
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <a href="/" class="brand">
+      <div class="brand-icon">
+        <!-- Camera + QR Vector Icon -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h4v4H4zM16 4h4v4h-4zM4 16h4v4H4z"/>
+          <path d="M9 9h6v6H9z"/>
+          <path d="M14 4h2M4 14v2M14 20h2M20 14v2"/>
+        </svg>
+      </div>
+      CamPhoto<span>Share</span>
+    </a>
+    <nav class="nav-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms</a>
+    </nav>
+  </header>
 
-<div class="container">
-
-    <div class="card">
-        <h2>About CamPhotoShare</h2>
-
-        <p>
-            CamPhotoShare is a photo sharing application designed for
-            photographers to organize and share event photos with their clients.
-        </p>
-
-        <p>
-            Photographers can create events, upload photos, and share their
-            event gallery with clients through a simple QR code.
-        </p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h2v2h-2zM19 19h2v2h-2z"/></svg>
+      Smart QR Photography Workflow
     </div>
+    <h1>Easy Photo Sharing for Photographers &amp; Clients</h1>
+    <p>
+      CamPhotoShare is the ultimate QR photo sharing and online album selection app. Share event photos via QR code scan and let studio clients shortlist photos effortlessly.
+    </p>
 
-    <div class="card">
-        <h2>Features</h2>
-
-        <div class="features">
-
-            <div class="feature">
-                <h3>Event-Based Sharing</h3>
-                <p>
-                    Organize photos according to weddings, events and other
-                    photography projects.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>Google Drive</h3>
-                <p>
-                    Connect Google Drive to store and manage event photos.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>QR Code Sharing</h3>
-                <p>
-                    Share an event gallery easily using a QR code.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>Easy Client Access</h3>
-                <p>
-                    Clients can access shared event photos without creating
-                    a separate account.
-                </p>
-            </div>
-
+    <div class="hero-actions">
+      <!-- Google Play Download Button -->
+      <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="play-btn">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4c0 .6.2 1.1.6 1.5l.1.1 9.8-9.8v-.2L3.7 2.4l-.1-.6z" fill="#4285F4"/>
+          <path d="M16.8 15.6l-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2-.1.1z" fill="#FBBC04"/>
+          <path d="M13.5 12.3L3.7 22.1c.4.4.9.4 1.5.1l11.6-6.6-3.3-3.3z" fill="#EA4335"/>
+          <path d="M13.5 12.1l3.3-3.3L5.2 2.2c-.6-.3-1.1-.3-1.5.1l9.8 9.8z" fill="#34A853"/>
+        </svg>
+        <div class="play-text">
+          <small>GET IT ON</small>
+          <span>Google Play</span>
         </div>
-    </div>
+      </a>
 
-    <div class="card">
-        <h2>Legal & Support</h2>
-
-        <div class="links">
-
-            <a href="privacy-policy.html">
-                Privacy Policy
-            </a>
-
-            <a href="terms-and-conditions.html">
-                Terms & Conditions
-            </a>
-            <a href="account-deletion.html">
-                Account Deletion
-            </a>
-
+      <!-- Visual QR Code Badge -->
+      <div class="qr-showcase">
+        <div class="qr-code-box">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#1E293B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="6" height="6" rx="1"/>
+            <rect x="16" y="2" width="6" height="6" rx="1"/>
+            <rect x="2" y="16" width="6" height="6" rx="1"/>
+            <path d="M10 4h4v4h-4z"/>
+            <path d="M16 12h2v2h-2z"/>
+            <path d="M10 12h2v2h-2z"/>
+            <path d="M14 16h6v4h-6z"/>
+            <path d="M10 18h2v2h-2z"/>
+          </svg>
         </div>
+        <div class="qr-text-info">
+          <span class="tag">Instant Scan</span>
+          <h4>Scan QR for Event Gallery</h4>
+          <p>Clients &amp; guests access photos in seconds</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Container -->
+  <main class="container">
+
+    <!-- About Section Card -->
+    <div class="about-card">
+      <h2>About CamPhotoShare</h2>
+      <p>
+        CamPhotoShare is a photo sharing application designed for photographers to organize and share event photos with their clients.
+      </p>
+      <p>
+        Photographers can create events, upload photos, and share their event gallery with clients through a simple QR code.
+      </p>
     </div>
 
-</div>
+    <!-- Feature Grid Section -->
+    <h2 class="section-title">Key Features</h2>
+    <div class="features-grid">
 
-<footer>
-    © 2026 CamPhotoShare. All rights reserved.
-</footer>
+      <!-- Event Based Sharing -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>Event-Based Sharing</h3>
+        <p>Organize photos according to weddings, events, and other photography projects systematically.</p>
+      </div>
+
+      <!-- Google Drive -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+          </svg>
+        </div>
+        <h3>Google Drive</h3>
+        <p>Connect Google Drive seamlessly to store, sync, and manage your event photos in the cloud.</p>
+      </div>
+
+      <!-- QR Code Sharing -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+            <path d="M14 14h3v3h-3zM17 17h3v3h-3zM14 20h3v1h-3zM20 14h1v3h-1z"/>
+          </svg>
+        </div>
+        <h3>QR Code Sharing</h3>
+        <p>Share complete event galleries instantly using simple scan-to-view QR codes for guests.</p>
+      </div>
+
+      <!-- Easy Client Access -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Easy Client Access</h3>
+        <p>Clients can access shared event photos and shortlist their favorites without creating a separate account.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="account-deletion.html">Account Deletion</a>
+    </div>
+    <div class="copyright">
+      &copy; 2026 CamPhotoShare. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <aside id="cookieBanner" class="cookie-banner" style="display: none;">
+    <p class="cookie-text">
+      We use cookies to ensure you get the best browsing experience. By continuing to use our website, you agree to our 
+      <a href="privacy-policy.html">Privacy Policy</a>.
+    </p>
+    <button id="acceptCookieBtn" class="cookie-btn">Accept Cookies</button>
+  </aside>
+
+  <!-- Cookie Script -->
+  <script>
+    (function() {
+      const banner = document.getElementById('cookieBanner');
+      const btn = document.getElementById('acceptCookieBtn');
+      const accepted = localStorage.getItem('camphotoshare_cookies_accepted');
+
+      if (!accepted) {
+        banner.style.display = 'flex';
+      }
+
+      btn.addEventListener('click', function() {
+        localStorage.setItem('camphotoshare_cookies_accepted', 'true');
+        banner.style.display = 'none';
+      });
+    })();
+  </script>
 
 </body>
 </html>
