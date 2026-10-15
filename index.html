@@ -851,15 +851,13 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .window-frame {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .app-body {
-    flex-direction: column;
-  }
-  .app-sidebar {
-    width: 100%;
-  }
-  .stat-cards-grid {
-    grid-template-columns: 1fr;
+    min-width: 700px; /* Isse layout PC jaisa ek line me rahega aur tootega nahi */
   }
 }
     /* Stats Counter Section */
