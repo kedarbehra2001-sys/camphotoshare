@@ -904,6 +904,184 @@
     font-size: 2rem;
   }
 }
+    /* Before vs After Comparison Section */
+    .comparison-section {
+      margin: 80px auto;
+      max-width: 980px;
+      padding: 0 16px;
+    }
+
+    .comparison-badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .comparison-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .comparison-header h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+
+    .comparison-header p {
+      color: #64748b;
+      font-size: 1rem;
+      margin-top: 8px;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* Old Way Card */
+    .compare-card.old-way {
+      background: #fff5f5;
+      border: 1px solid #fed7d7;
+      border-radius: 16px;
+      padding: 30px 24px;
+    }
+
+    .compare-card-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    }
+
+    .old-way .compare-card-title {
+      color: #c53030;
+    }
+
+    /* Smart Way Card */
+    .compare-card.smart-way {
+      background: #f0fdf4;
+      border: 2px solid #86efac;
+      border-radius: 16px;
+      padding: 30px 24px;
+      box-shadow: 0 10px 25px -5px rgba(22, 101, 52, 0.1);
+      position: relative;
+    }
+
+    .smart-way .compare-card-title {
+      color: #15803d;
+    }
+
+    .recommended-pill {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3);
+    }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .compare-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .old-way .compare-item {
+      color: #742a2a;
+    }
+
+    .smart-way .compare-item {
+      color: #14532d;
+      font-weight: 500;
+    }
+
+    .compare-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+
+    /* Bottom Action Banner */
+    .comparison-cta {
+      margin-top: 36px;
+      background: linear-gradient(135deg, #1e2638 0%, #0f172a 100%);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .comparison-cta h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .comparison-cta p {
+      color: #94a3b8;
+      max-width: 600px;
+      font-size: 0.95rem;
+    }
+
+    .comparison-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+
+    .comparison-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .comparison-header h2 {
+        font-size: 1.7rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1239,6 +1417,77 @@
           <h3>Windows Desktop App</h3>
           <p>Built for professional studios. Copy raw shortlisted image names directly into Photoshop or album design software with one click.</p>
         </div>
+      </div>
+    </section>
+    <!-- Before vs After Comparison Section -->
+    <section class="comparison-section">
+      <div class="comparison-header">
+        <span class="comparison-badge">Smart Workflow</span>
+        <h2>Purana Manual Tareeqa vs CamPhotoShare</h2>
+        <p>Dekhiye kaise CamPhotoShare aapke har event par 15+ ghante aur follow-up ka sar-dard bachata hai.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Old Painful Way -->
+        <div class="compare-card old-way">
+          <div class="compare-card-title">
+            <span>❌</span> Purana Manual Tareeqa
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item">
+              <span class="compare-icon">⏳</span>
+              <span><strong>Mahino ka Intezaar:</strong> Pen drive ya hard disk dene ke baad bhi client mahino tak photos shortlist nahi karta.</span>
+            </li>
+            <li class="compare-item">
+              <span class="compare-icon">📝</span>
+              <span><strong>Diary / WhatsApp Slips:</strong> Client kaghaz par <code>IMG_0412, IMG_0489</code> likh kar bhejta hai jise dhoondhna musibat hota hai.</span>
+            </li>
+            <li class="compare-item">
+              <span class="compare-icon">🔍</span>
+              <span><strong>Photoshop Sorting Headache:</strong> 4,000 photos ke beech se 80 album photos manually search karne me ghanton barbad hote hain.</span>
+            </li>
+            <li class="compare-item">
+              <span class="compare-icon">⚠️</span>
+              <span><strong>Pen Drive Chori / Kharab:</strong> Data corruption aur client follow-ups ka lagatar stress bana rehta hai.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Smart CamPhotoShare Way -->
+        <div class="compare-card smart-way">
+          <span class="recommended-pill">Photographers' Choice</span>
+          <div class="compare-card-title">
+            <span>⚡</span> CamPhotoShare (Smart Way)
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item">
+              <span class="compare-icon">📲</span>
+              <span><strong>1-Scan Instant Sharing:</strong> Wedding guests direct QR code scan karke live event photos phone me dekh sakte hain.</span>
+            </li>
+            <li class="compare-item">
+              <span class="compare-icon">❤️</span>
+              <span><strong>Easy Mobile Selection:</strong> Dulha-dulhan apne bistar par baith kar phone screen par tap karke photos select karte hain.</span>
+            </li>
+            <li class="compare-item">
+              <span class="compare-icon">📋</span>
+              <span><strong>1-Click Photoshop Copy:</strong> Client submit karega aur Windows app me 1-click me saari shortlisted photos copy ho jayengi!</span>
+            </li>
+            <li class="compare-item">
+              <span class="compare-icon">🔒</span>
+              <span><strong>100% Private Google Drive:</strong> Zero server tension! Pura data aapke official Google Drive par safe rehta hai.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Action Card directly leading to download -->
+      <div class="comparison-cta">
+        <h3>Apne Studio ka Album Selection 10x Fast Banayein</h3>
+        <p>Bina kisi pen drive ke, direct client ke mobile par selection bhejein aur raw shortlisted list 1 second me payein.</p>
+        <a href="https://github.com/kedarbehra2001-sys/camphotoshare/releases" class="comparison-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zm-9 9h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg>
+          Download Windows App Free
+        </a>
       </div>
     </section>
      <!-- Dynamic Stats Counter Section -->
