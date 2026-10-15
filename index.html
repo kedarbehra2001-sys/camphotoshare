@@ -851,13 +851,35 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .window-frame {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    transform: scale(0.85);
+    transform-origin: top center;
+    margin-bottom: -40px;
   }
-  .app-body {
-    min-width: 700px; /* Isse layout PC jaisa ek line me rahega aur tootega nahi */
+  .app-sidebar {
+    width: 140px;
+    padding: 14px 8px;
+  }
+  .app-brand-name {
+    font-size: 0.85rem;
+  }
+  .app-menu-item {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+  .app-content {
+    padding: 16px 14px;
+  }
+  .stat-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .stat-card-box {
+    padding: 10px;
+  }
+  .stat-card-value {
+    font-size: 1rem;
   }
 }
     /* Stats Counter Section */
