@@ -682,16 +682,18 @@
   padding: 0 6px;
 }
 
-.app-brand-icon {
+.app-brand-logo-img {
   width: 36px;
   height: 36px;
-  background: #2563eb;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.app-brand-name {
+  font-size: 1.15rem;
+  font-weight: 700;
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  letter-spacing: -0.3px;
 }
 
 .app-brand-name {
@@ -1064,10 +1066,8 @@
     <div class="app-body">
       <!-- Dark Sidebar -->
       <aside class="app-sidebar">
-        <div class="app-brand">
-          <div class="app-brand-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          </div>
+       <div class="app-brand">
+          <img src="logo.png" alt="CamPhotoShare Logo" class="app-brand-logo-img" />
           <span class="app-brand-name">CamPhotoShare</span>
         </div>
 
