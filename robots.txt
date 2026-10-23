@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /
+
+# XML Sitemap Location
+Sitemap: https://camphotoshare.in/sitemap.xml
