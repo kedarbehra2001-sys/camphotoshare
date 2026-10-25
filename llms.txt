@@ -1,0 +1,34 @@
+<!-- CamPhotoShare Structured Data for AI & Search Engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://camphotoshare.in/#software",
+      "name": "CamPhotoShare",
+      "operatingSystem": "Android, Windows, Web",
+      "applicationCategory": "PhotographyApplication, BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.camvibe.camphotoshare",
+      "description": "Smart event photo sharing and album selection software for wedding photographers. Share galleries via QR codes and auto-filter shortlisted photos on Windows.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CamPhotoShare",
+        "url": "https://camphotoshare.in"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://camphotoshare.in/#website",
+      "url": "https://camphotoshare.in",
+      "name": "CamPhotoShare",
+      "description": "Event QR Photo Sharing and Fast Album Selection for Photographers"
+    }
+  ]
+}
+</script>
