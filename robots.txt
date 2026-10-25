@@ -1,9 +1,20 @@
 User-agent: *
 Allow: /
 
-# Googlebot specific rules
-User-agent: Googlebot
+# Allow AI Search Crawlers
+User-agent: GPTBot
 Allow: /
 
-# XML Sitemap Location
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 Sitemap: https://camphotoshare.in/sitemap.xml
