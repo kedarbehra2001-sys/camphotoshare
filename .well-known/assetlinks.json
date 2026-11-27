@@ -1,1 +1,16 @@
 
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.camvibe.camphotoshare",
+      "sha256_cert_fingerprints": [
+        "3B:E1:3C:37:14:90:5A:18:73:F7:30:0F:89:30:7E:94:D7:CB:E4:FD:0C:79:B6:E6:0D:DE:45:29:BD:4C:8B:04"
+      ]
+    }
+  }
+]
+
