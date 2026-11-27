@@ -13,54 +13,37 @@
 
     if (!eventId) {
         eventNameElement.textContent = "Event not found";
-        status.textContent = "Invalid event link.";
+        status.textContent = "Invalid event link. Please scan the correct QR code.";
         openButton.disabled = true;
         return;
     }
 
     eventNameElement.textContent = eventName;
 
-    let appAttempted = false;
-    let appOpened = false;
+    const query =
+        "?eventId=" + encodeURIComponent(eventId) +
+        "&eventName=" + encodeURIComponent(eventName);
 
-    function openApp() {
-        appAttempted = true;
+    const appLink = "https://camphotoshare.in/event" + query;
+
+    const intentLink =
+        "intent://camphotoshare.in/event" + query +
+        "#Intent;scheme=https;" +
+        "package=com.camvibe.camphotoshare;" +
+        "S.browser_fallback_url=" + encodeURIComponent(playStoreUrl) +
+        ";end";
+
+    function openOrInstall() {
         status.textContent = "Opening CamPhotoShare...";
 
-        // Verified Android App Link will open the installed app.
-        window.location.href =
-            "https://camphotoshare.in/event?eventId=" +
-            encodeURIComponent(eventId) +
-            "&eventName=" +
-            encodeURIComponent(eventName);
+        // Open installed app, otherwise use Play Store fallback.
+        window.location.href = intentLink;
     }
 
-    openButton.addEventListener("click", function () {
-        if (appOpened) return;
+    openButton.textContent = "Open / Install CamPhotoShare";
+    openButton.addEventListener("click", openOrInstall);
 
-        if (openButton.dataset.mode === "install") {
-            window.location.href = playStoreUrl;
-        } else {
-            openApp();
-        }
-    });
-
-    document.addEventListener("visibilitychange", function () {
-        if (document.hidden && appAttempted) {
-            appOpened = true;
-        }
-    });
-
-    openApp();
-
-    setTimeout(function () {
-        if (!appOpened) {
-            status.textContent =
-                "If CamPhotoShare is not opening, install it from Google Play.";
-
-            openButton.textContent = "Install CamPhotoShare";
-            openButton.dataset.mode = "install";
-        }
-    }, 2500);
+    // Do not reload the same website URL.
+    status.textContent = "Tap below to open or install CamPhotoShare.";
 })();
 </script>
