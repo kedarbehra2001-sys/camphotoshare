@@ -1,49 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CamPhotoShare - Open Event</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;padding:24px;
+ display:flex;align-items:center;justify-content:center;
+ background:#101827;color:white;
+ font-family:Arial,sans-serif;text-align:center
+}
+.card{
+ width:100%;max-width:420px;padding:32px 22px;
+ border-radius:18px;background:#1c293b
+}
+h1{font-size:28px;margin:0 0 12px}
+p{color:#cbd5e1;line-height:1.6}
+.event{
+ margin:22px 0;padding:15px;background:#26364c;
+ border-radius:10px;font-weight:bold;overflow-wrap:anywhere
+}
+a{
+ display:block;padding:15px;margin-top:14px;
+ border-radius:10px;background:#2684ff;
+ color:white;text-decoration:none;font-weight:bold
+}
+</style>
+</head>
+<body>
+<div class="card">
+ <h1>CamPhotoShare</h1>
+ <p>Your photo event is ready.</p>
+ <div class="event" id="eventName">Loading event...</div>
+ <p id="status">Choose an option below.</p>
+ <a id="openApp" href="#">Open CamPhotoShare</a>
+ <a id="installApp"
+ href="https://play.google.com/store/apps/details?id=com.camvibe.camphotoshare">
+ Install from Google Play
+ </a>
+</div>
+
 <script>
-(function () {
-    const params = new URLSearchParams(window.location.search);
-    const eventId = params.get("eventId");
-    const eventName = params.get("eventName") || "Your Event";
+(function(){
+ const params=new URLSearchParams(location.search);
+ const eventId=params.get("eventId");
+ const eventName=params.get("eventName")||"Your Event";
+ const name=document.getElementById("eventName");
+ const status=document.getElementById("status");
+ const open=document.getElementById("openApp");
 
-    const status = document.getElementById("status");
-    const eventNameElement = document.getElementById("eventName");
-    const openButton = document.getElementById("openAppButton");
+ if(!eventId){
+   name.textContent="Event not found";
+   status.textContent="This event link is invalid.";
+   open.style.display="none";
+   return;
+ }
 
-    const playStoreUrl =
-        "https://play.google.com/store/apps/details?id=com.camvibe.camphotoshare";
+ name.textContent=eventName;
 
-    if (!eventId) {
-        eventNameElement.textContent = "Event not found";
-        status.textContent = "Invalid event link. Please scan the correct QR code.";
-        openButton.disabled = true;
-        return;
-    }
+ const query="?eventId="+encodeURIComponent(eventId)+
+   "&eventName="+encodeURIComponent(eventName);
 
-    eventNameElement.textContent = eventName;
+ const playStore="https://play.google.com/store/apps/details?id=com.camvibe.camphotoshare";
 
-    const query =
-        "?eventId=" + encodeURIComponent(eventId) +
-        "&eventName=" + encodeURIComponent(eventName);
+ const fallback=encodeURIComponent(playStore);
+ open.href="intent://camphotoshare.in/event"+query+
+   "#Intent;scheme=https;package=com.camvibe.camphotoshare;"+
+   "S.browser_fallback_url="+fallback+";end";
 
-    const appLink = "https://camphotoshare.in/event" + query;
-
-    const intentLink =
-        "intent://camphotoshare.in/event" + query +
-        "#Intent;scheme=https;" +
-        "package=com.camvibe.camphotoshare;" +
-        "S.browser_fallback_url=" + encodeURIComponent(playStoreUrl) +
-        ";end";
-
-    function openOrInstall() {
-        status.textContent = "Opening CamPhotoShare...";
-
-        // Open installed app, otherwise use Play Store fallback.
-        window.location.href = intentLink;
-    }
-
-    openButton.textContent = "Open / Install CamPhotoShare";
-    openButton.addEventListener("click", openOrInstall);
-
-    // Do not reload the same website URL.
-    status.textContent = "Tap below to open or install CamPhotoShare.";
+ open.addEventListener("click",function(){
+   status.textContent="Trying to open CamPhotoShare...";
+ });
 })();
 </script>
+</body>
+</html>
