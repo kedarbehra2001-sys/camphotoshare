@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Event - CamPhotoShare</title>
+
+    <meta name="description" content="Open your photo event using CamPhotoShare.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #101827;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 35px 24px;
+            border-radius: 18px;
+            background: #1c293b;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: 28px;
+        }
+
+        p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .event-name {
+            margin: 22px 0;
+            padding: 14px;
+            border-radius: 10px;
+            background: #26364c;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            border-radius: 10px;
+            background: #2684ff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .small {
+            margin-top: 18px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>CamPhotoShare</h1>
+
+    <p>Your photo event is ready.</p>
+
+    <div class="event-name" id="eventName">
+        Opening your event...
+    </div>
+
+    <p id="status">
+        Please wait while we open CamPhotoShare.
+    </p>
+
+    <button id="openAppButton" type="button">
+        Open CamPhotoShare
+    </button>
+
+    <p class="small">
+        If the app is not installed, you can install it from Google Play.
+    </p>
+</div>
+
+<script>
+(function () {
+    const params = new URLSearchParams(window.location.search);
+
+    const eventId = params.get("eventId");
+    const eventName = params.get("eventName") || "Your Event";
+
+    const status = document.getElementById("status");
+    const eventNameElement = document.getElementById("eventName");
+    const openButton = document.getElementById("openAppButton");
+
+    const playStoreUrl =
+        "https://play.google.com/store/apps/details?id=com.camvibe.camphotoshare";
+
+    if (!eventId) {
+        eventNameElement.textContent = "Event not found";
+        status.textContent = "This event link is invalid. Please scan the correct QR code.";
+        openButton.disabled = true;
+        return;
+    }
+
+    eventNameElement.textContent = eventName;
+
+    const appUrl =
+        "https://camphotoshare.in/event?eventId=" +
+        encodeURIComponent(eventId) +
+        "&eventName=" +
+        encodeURIComponent(eventName);
+
+    function openApp() {
+        status.textContent = "Opening CamPhotoShare...";
+
+        // Android App Links should open the installed app
+        window.location.href = appUrl;
+    }
+
+    openButton.addEventListener("click", openApp);
+
+    // Try opening the app automatically
+    openApp();
+
+    // If the app does not open, offer Play Store installation
+    let pageHidden = false;
+
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            pageHidden = true;
+        }
+    });
+
+    setTimeout(function () {
+        if (!pageHidden) {
+            status.textContent =
+                "App did not open? Install CamPhotoShare from Google Play.";
+
+            openButton.textContent = "Install CamPhotoShare";
+            openButton.onclick = function () {
+                window.location.href = playStoreUrl;
+            };
+        }
+    }, 2500);
+
+})();
+</script>
+
+</body>
+</html>
